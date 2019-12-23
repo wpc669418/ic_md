@@ -1,55 +1,57 @@
-# 电子发票开具
+### 第三方购气数据加密
 
-- 请求地址：` http://baseUrl/api/invoice/internet/1001 `
+- 请求地址：` http://baseUrl/api/smartcard/goldcard/1001 `
+
 - 请求类型:  `POST`
+
 - 请求:
 
 
-| 参数             | 类型   | 必须 | 说明                                                                                                              |
-| ---------------- | ------ | ---- | ----------------------------------------------------------------------------------------------------------------- |
-| orderNo          | String | 是   | 订单号                                                                                                            |
-| companyCode      | String | 是   | 公司编码                                                                                                          |
-| orderTime        | String | 是   | 订单生成时间，格式yyyy-MM-dd HH:mm:ss                                                                             |
-| contact          | String | 否   | 联系人                                                                                                            |
-| contactMobile    | String | 否   | 联系人手机                                                                                                        |
-| contactMail      | String | 否   | 联系人邮箱                                                                                                        |
-| salerName        | String | 是   | 售方名称，不填则用纳税人注册的信息                                                                                |
-| salerTaxCode     | String | 是   | 售方纳税识别号。销货方纳税人识别号                                                                                |
-| salerAddress     | String | 是   | 售方地址。同上                                                                                                    |
-| salerTel         | String | 是   | 售方电话。同上                                                                                                    |
-| salerBankName    | String | 是   | 售方开户银行。同上                                                                                                |
-| buyerName        | String | 是   | 购方名称。即发票抬头                                                                                              |
-| buyerTaxCode     | String | 否   | 购货方纳税识别号                                                                                                  |
-| buyerAddress     | String | 否   | 购方地址                                                                                                          |
-| buyerTel         | String | 否   | 购方电话                                                                                                          |
-| buyerBankName    | String | 否   | 购方开户银行                                                                                                      |
-| buyerBankAccount | String | 否   | 购方银行账号                                                                                                      |
-| drawer           | String | 是   | 开票人                                                                                                            |
-| totalAmount      | String | 是   | 合计金额。不含税金额合计                                                                                          |
-| totalPay         | String | 是   | 税价合计金额。必须大于等于 0.01元；必须等于明细合计金额；必须小于等于在税务局进行票种核定时确定的单张发票开票限额 |
-| remark           | String | 否   | 发票备注                                                                                                          |
-| items            | Array  | 是   | 发票项目明细                                                                                                      |
-| ┣ code           | String | 否   | 商品编码                                                                                                          |
-| ┣ name           | String | 是   | 商品名称                                                                                                          |
-| ┣ spec           | String | 否   | 规格型号                                                                                                          |
-| ┣ price          | String | 否   | 商品单价。必须等于金额/数量的四舍五入值                                                                           |
-| ┣ quantity       | String | 否   | 数量。必须大于等于 0.000001，如价格不为空则数量也不能为空                                                         |
-| ┣ unit           | String | 否   | 单位                                                                                                              |
-| ┣ taxRate        | String | 是   | 税率                                                                                                              |
-| ┣ noTaxAmount    | String | 是   | 不税金额                                                                                                          |
-| ┣ tax            | String | 是   | 税额                                                                                                              |
-| ┣ taxAmount      | String | 是   | 含税金额                                                                                                          |
+| 参数                       | 类型   | 必须 | 说明                                                                                                   |
+| -------------------------- | ------ | ---- | ------------------------------------------------------------------------------------------------------ |
+| appCode                    | String | 是   | 授权码。由平台提供                                                                                     |
+| meterType                  | String | 是   | 表类型。11、民用气量；12、工业气量，13、102卡金额表,14、两阶三价金额表，15、四阶五价金额表，16、温补表 |
+| opType                     | String | 是   | 操作类型。1发开户卡，2购气,3补卡                                                                       |
+| companyCode                | String | 是   | 公司编码。由平台提供                                                                                   |
+| cardNo                     | String | 是   | 卡号。                                                                                                 |
+| gas                        | String | 是   | 购气量或金额。金额表填购气金额，气量表填购气量                                                         |
+| price1                     | String | 否   | 价格1。金额表必填                                                                                      |
+| price2                     | String | 否   | 价格2                                                                                                  |
+| price3                     | String | 否   | 价格3                                                                                                  |
+| price4                     | String | 否   | 价格4                                                                                                  |
+| price5                     | String | 否   | 价格5                                                                                                  |
+| ladderVolume1              | String | 否   | 阶梯气量1                                                                                              |
+| ladderVolume2              | String | 否   | 阶梯气量2                                                                                              |
+| ladderVolume3              | String | 否   | 阶梯气量3                                                                                              |
+| ladderVolume4              | String | 否   | 阶梯气量4                                                                                              |
+| priceEffectiveDate         | String | 否   | 价格生效日期。格式YYYYMMDDHH，金额表必填                                                               |
+| priceCycleDate             | String | 否   | 价格周期开始日期。格式YYYYMMDDHH，金额表必填                                                           |
+| cycleLength                | String | 否   | 周期长度。不能<1，金额表必填                                                                           |
+| priceVersion               | String | 否   | 价格版本。不能<1，金额表必填                                                                           |
+| deferredPrice1             | String | 否   | 延时价格1                                                                                              |
+| deferredPrice2             | String | 否   | 延时价格2                                                                                              |
+| deferredPrice3             | String | 否   | 延时价格3                                                                                              |
+| deferredPrice4             | Array  | 否   | 延时价格4                                                                                              |
+| deferredPrice5             | String | 否   | 延时价格5                                                                                              |
+| deferredLadderVolume1      | String | 否   | 延时阶梯气量1                                                                                          |
+| deferredLadderVolume2      | String | 否   | 延时阶梯气量2                                                                                          |
+| deferredLadderVolume3      | String | 否   | 延时阶梯气量3                                                                                          |
+| deferredLadderVolume4      | String | 否   | 延时阶梯气量4                                                                                          |
+| deferredPriceEffectiveDate | String | 否   | 延时价格生效日期                                                                                       |
+| deferredPriceCycleDate     | String | 否   | 延时价格周期开始日期                                                                                   |
+| deferredCycleLength        | String | 否   | 延时价格周期长度                                                                                       |
+| deferredPriceVersion       | String | 否   | 延时价格版本。等于0表示不启用，金额表必填                                                              |
+| data                       | String | 是   | 读卡数据。[详见附录二](./appendix_two.md)                                                              |
 
 - 响应：
 
-| 参数     | 类型   | 说明                                     |
-| -------- | ------ | ---------------------------------------- |
-| echoCode | String | 响应码。[详见附录](./appendix.md)                |
-| message  | String | 处理结果消息                             |
-| fpqqlsh  | String | 发票请求流水号。在echoCode等于0000时返回 |
-| fpdm     | String | 发票代码。同上                           |
-| fphm     | String | 发票号码。同上                           |
-| url      | String | pdf地址。同上                            |
+| 参数        | 类型   | 说明                                                                             |
+| ----------- | ------ | -------------------------------------------------------------------------------- |
+| echoCode    | String | 响应码。[详见附录一](./appendix.md)                                              |
+| msg         | String | 响应消息                                                                         |
+| rdata       | String | 加密的数据。[详见附录二]()。在echoCode等于0000时返回                             |
+| cardpassOld | String | 旧密码。4442卡使用，写卡前核对。在echoCode等于0000时返回                         |
+| cardpassNew | String | 新密码。4442卡使用，若与旧密码相同则忽略，否则修改密码。在echoCode等于0000时返回 |
 
 ### 请求数据示例
 

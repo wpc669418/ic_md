@@ -57,25 +57,52 @@
 
 ```json
 {
-  "begin_date" : "20170313",
-  "end_date" : "20170313"
+  "appCode": "00000062",
+  "companyCode": "057101",
+  "data": "BF00303030300000000030303030C0F400000000F08F1D2140CF0C84BDA0FDC6FC10000634057102A77588C74FD4F4312DA8FFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+  "meterType": "11",
+  "opType": "2",
+  "cardNo": "10000634",
+  "gas": "1.0",
+  "buyCount": "8",
+  "price1": "2.40000",
+  "price2": "2.88000",
+  "price3": "3.60000",
+  "price4": "0",
+  "price5": "0",
+  "ladderVolume1": "1.00000",
+  "ladderVolume2": "600.00000",
+  "ladderVolume3": "0",
+  "ladderVolume4": "0",
+  "priceEffectiveDate": "2019120500",
+  "priceCycleDate": "2019010100",
+  "cycleLength": "12",
+  "priceVersion": "8",
+  "deferredPrice1": "0",
+  "deferredPrice2": "0",
+  "deferredPrice3": "0",
+  "deferredPrice4": "0",
+  "deferredPrice5": "0",
+  "deferredLadderVolume1": "0",
+  "deferredLadderVolume2": "0",
+  "deferredLadderVolume3": "0",
+  "deferredLadderVolume4": "0",
+  "deferredPriceEffectiveDate": "",
+  "deferredPriceCycleDate": "",
+  "deferredCycleLength": "1",
+  "deferredPriceVersion": "0"
 }
+
 ```
 
 ### 返回数据示例
 
 ```json
 {
-  "list": [
-    {
-      "ref_date": "20170313",
-      "session_cnt": 142549,
-      "visit_pv": 472351,
-      "visit_uv": 55500,
-      "visit_uv_new": 5464,
-      "stay_time_session": 0,
-      "visit_depth": 1.9838
-    }
-  ]
+    "echoCode": "0000",
+    "msg": "成功",
+    "rdata": "BF00303030310000000030303031C100000000005589B5C802746F66F851C8CCB81000063405710106AEE1B899A985BCCDD4FFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+    "cardPassOld": "0f0",
+    "cardPassNew": ""
 }
 ```

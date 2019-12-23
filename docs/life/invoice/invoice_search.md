@@ -61,25 +61,55 @@
 
 ```json
 {
-  "appCode" : "20170313",
-  "companyCode" : "20170313"
+  "appCode": "00000062",
+  "companyCode": "057101",
+  "data": "100010000056FFFFFF7516ADAEBBD350EF1FFF000000000000010000000000000111223344556677880000000000000000000000000000000000000000191219161912191600000000000200000002000000020000000000000000001912191619121916010100A788FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0571012019121910D40DFFFFFFFFFFFFFFFFFFFFFFFFFFFF45EE5336CA0849C4"
 }
+
 ```
 
 ### 返回数据示例
 
 ```json
 {
-  "list": [
-    {
-      "ref_date": "20170313",
-      "session_cnt": 142549,
-      "visit_pv": 472351,
-      "visit_uv": 55500,
-      "visit_uv_new": 5464,
-      "stay_time_session": 0,
-      "visit_depth": 1.9838
-    }
-  ]
+  "echoCode": "0000",
+  "msg": "成功",
+  "meterType": "14",
+  "cardNo": "10000056",
+  "balance": "0.00",
+  "buyCount": "1",
+  "meteringType": "0",
+  "meterNo": "",
+  "readCardDate": "",
+  "surplus": "0.00",
+  "cumulativeGas": "0.00",
+  "cumulativeMoney": "0.00",
+  "price1": "2.0000",
+  "price2": "0.0000",
+  "price3": "0.0000",
+  "price4": "0.0000",
+  "price5": "0.0000",
+  "ladderVolume1": "0",
+  "ladderVolume2": "0",
+  "ladderVolume3": "0",
+  "ladderVolume4": "0",
+  "priceEffectiveDate": "2019121916",
+  "priceCycleDate": "2019121916",
+  "cycleLength": "1",
+  "priceVersion": "1",
+  "deferredPrice1": "0.0000",
+  "deferredPrice2": "0.0000",
+  "deferredPrice3": "0.0000",
+  "deferredPrice4": "0.0000",
+  "deferredPrice5": "0.0000",
+  "deferredLadderVolume1": "0",
+  "deferredLadderVolume2": "0",
+  "deferredLadderVolume3": "0",
+  "deferredLadderVolume4": "0",
+  "deferredPriceEffectiveDate": "2019121916",
+  "deferredPriceCycleDate": "2019121916",
+  "deferredCycleLength": "0",
+  "deferredPriceVersion": "0"
 }
+
 ```

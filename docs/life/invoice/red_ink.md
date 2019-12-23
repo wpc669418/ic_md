@@ -27,25 +27,22 @@
 
 ```json
 {
-  "appCode" : "20170313",
-  "companyCode" : "20170313"
+  "appCode": "00000062",
+  "companyCode": "057101",
+  "data": "0F0FFFFFFFFFFFFFFFFF1244FFFF1850442118500100"
 }
+
 ```
 
 ### 返回数据示例
 
 ```json
 {
-  "list": [
-    {
-      "ref_date": "20170313",
-      "session_cnt": 142549,
-      "visit_pv": 472351,
-      "visit_uv": 55500,
-      "visit_uv_new": 5464,
-      "stay_time_session": 0,
-      "visit_depth": 1.9838
-    }
-  ]
+  "echoCode": "0000",
+  "msg": "成功",
+  "rdata": "0F0FFFFFFFFFFFFFFFFF1244FFFF1850442118500100",
+  "cardType": "1",
+  "cardPwd": "1244"
 }
+
 ```
